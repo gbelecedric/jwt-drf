@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework.authtoken.views import obtain_auth_token  # <-- Here
-from myapi.core import views
+from core.views import *
 
 urlpatterns = [
     path('hello/', views.HelloView.as_view(), name='hello'),
