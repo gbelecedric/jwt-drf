@@ -46,12 +46,20 @@ INSTALLED_APPS = [
 ]
 
 
+#----with TokenAuthentication
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.TokenAuthentication',  # <-- And here
+#     ],
+# }
+
+#----with JWTAuthentication
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',  # <-- And here
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
