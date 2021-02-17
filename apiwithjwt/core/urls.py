@@ -6,5 +6,9 @@ from core.views import *
 
 urlpatterns = [
     path('hello/', HelloView.as_view(), name='hello'),
-    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),  # <-- And here tokenauth
+    # path('api-token-auth/', obtain_auth_token, name='api_token_auth'),  # <-- And here tokenauth
+
+
+    path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]
